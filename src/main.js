@@ -67,7 +67,10 @@ function toggleTask(id) {
 }
  
 function deleteTask(id) {
+  const conferma = confirm("Sei sicuro di voler eliminare questo task?");
+  
+  if (!conferma) return;
+
   tasks = tasks.filter(t => t.id !== id)
- 
   render()
 }
